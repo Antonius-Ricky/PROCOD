@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LUMBAPEDIA</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .login-container {
+            min-width: 100vw;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            /* background-color: blue; */
+        }
+
+        body{
+            background-image: url(boedi.png);
+            background-color: antiquewhite;
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: flex;
+            width: 100%;
+            height: 100%;
+        }
+
+        form {
+            width: 18rem;
+            height: 30rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            /* background-color: azure; */
+        }
+
+        .judul{
+            display: flex;
+            /* align-items: center; */
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- <div class="judul">
+        <h1>LUMBAPEDIA</h1>
+    </div> -->
+    <div class="login-container">
+        <h1>LUMBAPEDIA</h1>
+
+        <!-- <h1>Login Page</h1> -->
+
+        <div class="message">
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    <ul class="flashes">
+                        {% for category, message in messages %}
+                            <li class="{{ category }}">{{ message }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            {% endwith %}
+        </div>
+        <form method="post">
+            <input
+                type="text"
+                name="username"
+                placeholder="Username"
+                autocomplete="off">
+            <input
+                type="text"
+                name="password"
+                placeholder="Password">
+            <input type="submit" value="Login">
+        </form>
+    </div>
+</body>
+</html>

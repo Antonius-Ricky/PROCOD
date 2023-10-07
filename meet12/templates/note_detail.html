@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block section_content %}
+    {% if note %}
+        <div>
+            <h1>Note : {{ note[0] }}</h1>
+            <p style="font-style: italic; font-size: 10px;"> dibuat pada tanggal : {{ note[2] }}</p>
+            <br>
+            <!-- <p>{{ note[1] }}</p> -->
+            <form action="", method="post">
+                <input type="text" name="new_note" id="new_note" value="{{ note[1] }}">
+                <div class="btns">
+                    <a href="{{ url_for('index') }}" class="btn">Batal</a>
+                    <input type="submit" value="✅">
+                </div>
+            </form>
+        </div>
+    {% else %}
+        <div>
+            <p>Tidak ada catatan.</p>
+        </div>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wikipedia</title>
+    <link rel="stylesheet" href="../static/style.css">
+    <link rel="shortcut icon" href="../static/img/WikiIcon.png"/>
+</head>
+<body>
+    <header><a href="{{url_for('logout')}}">Logout</a></header>
+    <section class="section-1">
+        <img src="../static/img/wikibro.png" class="logo">
+      <div class="s-box">
+          <form method="post" action="{{url_for('search')}}"><br><br>
+              <input type="text" class="s-input" name="query">
+              <input type="submit" class="s-btn" value="Search">
+          </form>
+        </div>
+    </section>
+    <footer></footer>    
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="shortcut icon" href="../static/img/WikiIcon.png"/>
+    <style>
+        
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .login-container {
+            min-width: 100vw;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(73, 78, 73);
+        }
+
+        form {
+            width: 40rem;
+            height: 20rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            background-color: rgb(146, 156, 146);
+            border-radius: 5rem;
+        }
+        form.input-container{
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        form p {
+            margin: 0;
+            text-align: left;
+        }
+        form input{
+            margin: 0;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+
+
+        <div class="message">
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    <ul class="flashes">
+                        {% for category, message in messages %}
+                            <li class="{{ category }}">{{ message }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            {% endwith %}
+        </div>
+        <form method="post">
+        <h1>Login Page</h1>
+        <div class="input-container">
+            <label for="username">Username : </label>
+            <input type="text" name="username" placeholder="Enter Your Username" autocomplete="off" required>
+            </div>
+            <div class="input-container">
+            <label for="password">Password : </label>
+            <input type="password" name="password" placeholder="Enter Your Password" required>
+            </div>    
+            <input type="submit" value="Login" style="width: 12rem; background-color: #1B5ADD; color: white;">
+        </form>
+    </div>
+</body>
+</html>

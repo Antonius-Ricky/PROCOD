@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wiki Search</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+        body{
+            background-color: aqua;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        section.content {
+            background-color: yellowgreen;
+        }
+        h1, p{
+            text-align: center;
+        }
+        h1{
+            /*background-color:whitesmoke;*/
+        }
+        img{
+            display:block;
+            margin:0 auto; /*membuat gambar ke tengah*/
+            padding-top: 30px;
+            padding-bottom: 40px;
+
+        }
+        form{
+             /* background-color: aliceblue; /
+            / text-align: center; */
+            background-color: rgb(255, 255, 255);
+            height: 36px;
+            width: 398.5px;
+            line-height: 36px;
+            margin: 0 auto;
+            border: 1px solid lightblue;
+        }
+        form .search-entry{
+            width: 75%;
+            height: 25px;
+            border: none;
+            padding: 0px 10px;
+            background-color: white;
+        }
+        form .search-entry:focus{
+            outline: none;
+            background-color: white;
+        }
+        form .search-langs{
+            width: 50px;
+            height: 30px;
+            border: none;
+
+        }
+        form .search-btn{
+            width: 40px;
+            height: 35px;
+            border: none;
+            background-color: lightblue;
+            cursor: pointer;
+        }
+
+
+    </style>
+</head>
+<body>
+    <header></header>
+    <section class=" content">
+        <h1>Wikipedia</h1>
+        <p>The free encyclopedia</p>
+        <img src="https://images-ext-2.discordapp.net/external/nJZXffo78n77VubiSm4WHHvrfU-8OQHUHRwoSy8K9nY/https/imgs.search.brave.com/EmlAhk5pi5mv83yeSXH4OXOqZRPk9FilwgnBHE3z5aI/rs%3Afit%3A860%3A0%3A0/g%3Ace/aHR0cHM6Ly9sb2dv/cy13b3JsZC5uZXQv/d3AtY29udGVudC91/cGxvYWRzLzIwMjAv/MDkvV2lraXBlZGlh/LUxvZ28tNzAweDM5/NC5wbmc" alt="Wikipedia Logo">
+        <form action="https://www.wikipedia.org/wiki/">
+            <input class="search-entry"type="text" name="" id="">
+            
+            <select class="search-langs" id="lang">
+                <option value="en">En</option>
+                <option value="id">Id</option>
+            </select>
+            <input type="submit" value="🍳" class="search-btn">
+        </form>
+    <section>
+</body>
+</html> 
