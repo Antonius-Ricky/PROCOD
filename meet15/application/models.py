@@ -10,6 +10,7 @@ class User(db.Model):
     password = db.Column(db.String(128), nullable=False)
     photoprofile = db.Column(db.String(255))
     bio = db.Column(db.String(255))
+    timestamp = db.Column(db.DateTime(timezone=True), server_default=func.now())
     
     comments = db.relationship('Comment', back_populates='user')
     posts = db.relationship('Post', back_populates='user')
@@ -25,6 +26,7 @@ class Relationship(db.Model):
     follower_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
     following_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
     status = db.Column(db.Boolean, nullable=False)
+    timestamp = db.Column(db.DateTime(timezone=True), server_default=func.now())
     
     follower = db.relationship('User', foreign_keys=[follower_id], back_populates='followers')
     following = db.relationship('User', foreign_keys=[following_id], back_populates='following')
@@ -60,6 +62,7 @@ class Like(db.Model):
     like_id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
     post_id = db.Column(db.Integer, db.ForeignKey('posts.post_id'), nullable=False)
+    timestamp = db.Column(db.DateTime(timezone=True), server_default=func.now())
     
     user = db.relationship('User', back_populates='likes')
     post = db.relationship('Post', back_populates='likes')
